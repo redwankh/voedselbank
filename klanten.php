@@ -44,8 +44,8 @@ include_once( 'includes/header.php' );
         <tbody>
         <?php foreach ($klanten as $klant): ?>
             <tr>
-                <td><?= htmlspecialchars($klant['klant_id']) ?></td>
-                <td><?= htmlspecialchars($klant['naam']) ?></td>
+                <td><?= $klant['klant_id']?></td>
+                <td><?= $klant['naam']?></td>
                 <td>
                     <form method="POST" class="d-inline">
                         <input type="hidden" name="klant_id" value="<?= $klant['klant_id'] ?>">

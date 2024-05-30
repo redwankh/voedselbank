@@ -7,10 +7,9 @@ if (!isset($_SESSION['gebruiker_id'])) {
     exit();
 }
 
-// week nummer
 $week_number = date('W');
 
-// alle pakketen ophallen die deze week opgesteld moet worden
+// alle pakketen ophallen die deze week opgesteld moet worden, dus nog niet compleet
 $stmt = $pdo->prepare("
     SELECT  *, WEEK(pakketten.datum, 1) FROM pakketten 
     INNER JOIN klanten ON (pakketten.klant_id = klanten.klant_id)  
